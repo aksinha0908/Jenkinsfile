@@ -1,0 +1,24 @@
+node ('slave-10.1.110.52')
+    {
+    stage('Hello')
+    {
+        echo 'Hello World'
+    }
+    stage('Code sync') 
+    {
+        git branch: 'master', 
+        url: 'https://github.com/aksinha0908/simple-java-maven-app'
+    }
+    stage('Build')
+    {
+        echo 'Code build'
+    }
+    stage('Test')
+    {
+        echo 'Code Test'
+    }
+    stage('Deploy')
+    {
+        echo 'Deploy'
+    }
+}
